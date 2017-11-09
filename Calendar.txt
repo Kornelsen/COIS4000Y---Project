@@ -1999,7 +1999,7 @@ proficient in the kinds of communication essential to a
 variety of workplaces. Students are introduced to key
 concepts in communication theory, practise a range
 of formats, and take part in a multi-stage simulation.
-Prerequisite: WRIT 1001H. Excludes ADMN 3410H.
+Prerequisite: WRIT 1001H. Excludes ADMN 3410H. <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -2124,7 +2124,7 @@ From the late Bronze Age to the end of the Hellenistic
 Period (ca. 1200–30 BCE), the history of ancient Greece
 is the story of great kingdoms and empires, the rise
 of democracy, and the flourishing of intellectual and
-artistic expression. Excludes AHCL 2100Y.
+artistic expression. Excludes AHCL 2100Y. <
 
 The minor in Ancient Greek & Roman Studies consists
 of the following 5.0 credits:
@@ -2134,7 +2134,7 @@ of the following 5.0 credits:
 –	 1.0 AHCL credit at the 3000 level or beyond
 
 <COURSE> AHCL-ANTH 2205H: Archaeology and Art History
-of Ancient Greece (see Anthropology)
+of Ancient Greece (see Anthropology)<
 
 The minor in Greek & Latin Language & Literature
 consists of a combined total of 5.0 credits in GREK and
@@ -2555,7 +2555,7 @@ texts, and intensive study of Greek grammatical
 principles. Prerequisite: At least 70% in GREK 3001H or
 3002H (or 3000Y). Because the core texts change from
 year to year, students may take the course more than
-once with permission of program.
+once with permission of program. <
 
 ■■Anthropology
 
@@ -3750,7 +3750,7 @@ is placed on the interactions between biology,
 culture, and behaviour. Topics include adaptation
 to temperature, altitude, nutrition, and disease.
 Prerequisite: ANTH 2410H (or 2400Y) or permission of
-instructor.
+instructor. <
 
 ■■Archaeology
 
@@ -4158,7 +4158,7 @@ communicate clearly and succinctly, how to develop
 a storyline, and how to determine whether material
 is appropriate to the audience. Prerequisite: 70% or
 higher in ASCI 3000H. Only open to students enrolled
-in the BAS program, or by permission of instructor.
+in the BAS program, or by permission of instructor. <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -5328,7 +5328,7 @@ Students are eligible to apply in the year before
 anticipated enrolment in the course. Application forms
 can be obtained from the Biology Office and must be
 submitted to the course coordinator before April 15.
-Students may not apply retroactively. Excludes BIOLBIOM 4460H.
+Students may not apply retroactively. Excludes BIOLBIOM 4460H. <
 
 ■■Biomedical Science
 
@@ -5492,7 +5492,7 @@ are eligible to apply in the year before anticipated
 enrolment in the course. Application forms can
 be obtained from the Biology Office and must be
 submitted before April 15. Students may not apply
-retroactively. Excludes BIOM-BIOL 4450Y.
+retroactively. Excludes BIOM-BIOL 4450Y. <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -6388,7 +6388,7 @@ social justice, and environmental quality. Examines
 approaches and methods of the sustainability
 paradigm and the way they are used in various areas.
 Prerequisite: 12.0 university credits, of which 5.0 must
-be ADMN credits.
+be ADMN credits. <
 
 ■■Canadian Studies
 
@@ -7401,7 +7401,7 @@ governmental, professional, and organizational
 responses to poverty, health care, old age, children’s
 rights, mental illness, physical disability, family
 fragmentation, and caregiving. Prerequisite: 14.0
-university credits. Excludes CAST-HIST-POST 4770Y.
+university credits. Excludes CAST-HIST-POST 4770Y. <
 
 ■■Chemical Physics
 
@@ -7993,7 +7993,7 @@ Theory of spectrometric techniques for elemental
 analysis. Students become acquainted with the current
 literature and research in analytical/environmental
 chemistry. Prerequisite: CHEM-ERSC 3400H or 3410H
-or permission of instructor.
+or permission of instructor. <
 
 ■■Child & Youth Studies
 
@@ -8298,7 +8298,7 @@ Systems)
 <COURSE> WRIT 1001H: Write in Time (see General University
 Courses)
 <COURSE> WRIT 2002H: Write It Up: Effective Communication
-(see General University Courses)
+(see General University Courses) <
 
 The Option in Communications & Critical Thinking
 consists of the following 4.0 credits:
@@ -9028,7 +9028,7 @@ line drawing, two-dimensional transformations, twodimensional clipping algorithm
 representations, three-dimensional clipping, line
 removal techniques, splines, and ray tracing.
 Prerequisite: COIS 2020H, COIS 2830H, and MATH
-1350H.
+1350H. <
 
 Program Coordinators
 	Chair of the Department of Computing &
@@ -10094,7 +10094,7 @@ conditions of narrative production related to different
 media. Prerequisite: 10.0 university credits including 3.0
 CUST credits; or CUST 1535H (1035Y), COIS 1010H,
 and either CUST 2035Y or 2535H; or permission of
-instructor.
+instructor. <
 
 ■■Ecological Restoration
 Note that credit given for Fleming courses does not
@@ -10732,7 +10732,7 @@ of incentives in regulation, the economics and
 environmental effects of market failure, and the
 rationale for government intervention. Prerequisite:
 60% or higher in ECON 1010H and 1020H or
-permission of instructor.
+permission of instructor. <
 
 Trent University offers four options for students intending
 to teach at the Elementary or Secondary levels in the
@@ -12054,7 +12054,7 @@ and intermediate ages. Explores the mathematical
 knowledge necessary to effectively support numeracy
 development for learners. Includes at least 18 hours of
 field placement. Prerequisite: 60% or higher in EDUC
-3010H.
+3010H. <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -12948,7 +12948,7 @@ English Literature
 Restoration and Eighteenth-Century Literature
 See trentu.ca/english for details. Prerequisite: 4.0 ENGL
 credits (or permission of the department). Students
-may take only one of ENGL 4200Y or 4201H for credit.
+may take only one of ENGL 4200Y or 4201H for credit. <
 
 ■■Environment
 
@@ -14113,7 +14113,7 @@ one or more reports on research that they undertook
 during the field course. Prerequisite: 10.0 university
 credits and a minimum cumulative average of 75% in
 Environmental & Resource Science/Studies courses; or
-permission of the chair.
+permission of the chair. <
 
 ■■Environmental Chemistry
 
@@ -14341,7 +14341,7 @@ methods. This course emphasizes how geophysical
 techniques can be used for resource and archeological
 exploration, climate change detection, and
 environmental investigations. Prerequisite: PHYS 1001H
-and GEOG 1040H.
+and GEOG 1040H. <
 
 ■■Forensic Science
 
@@ -14859,7 +14859,7 @@ techniques are applied to the experience of testifying
 in a courtroom setting and to understanding the
 impact of ethical and effective testimony. Open only to
 students registered in the BScFS program. Prerequisite:
-14.0 university credits including FRSC 2100H.
+14.0 university credits including FRSC 2100H. <
 
 trentu.ca/modernlanguages
 Associate Professor and Chair of the Department
@@ -15819,7 +15819,7 @@ French & Francophone Studies
 Intermediate German language course with
 comprehensive grammar review and intensive language
 practice. Prerequisite: GRMN 1000Y or 1002H or
-permission of instructor. Excludes GRMN 2000Y.
+permission of instructor. Excludes GRMN 2000Y. <
 
 ■■Gender & Women’s Studies
 
@@ -16417,7 +16417,7 @@ expression. Gender, sexuality, transgression, and
 intersectionality are central to the inquiry and
 conversation. Prerequisite: 1.0 WMST credit at the
 2000 level or beyond or permission of instructor.
-Excludes WMST-CUST 3250H.
+Excludes WMST-CUST 3250H.<
 
 ■■Geography
 
@@ -17202,7 +17202,7 @@ and the Production of Subjects in Canada (see
 Canadian Studies)
 <COURSE> GEOG-ERSC 4640H: Integrated Watershed
 Management: Approaches and Methods (Sc) (see
-Environmental & Resource Science/Studies)
+Environmental & Resource Science/Studies) <
 
 ■■German
 		See "French & Francophone Studies"
@@ -17230,7 +17230,7 @@ the agreement of a faculty member to supervise the
 project. Applications are available from the TSE office,
 and should be submitted in the academic year before
 enrolment in the course. Excludes GEOG 4030Y,
-4400Y, 4700Y.
+4400Y, 4700Y. <
 
 ■■History
 
@@ -18659,7 +18659,7 @@ the courts as well as that of the criminals. Topics
 include witchcraft, sodomy, murder, theft, rape, and
 prostitution. Prerequisite: 4.0 HIST credits or permission
 of the chair. Excludes HIST 3751Y, 3850Y, 4850Y,
-4953Y. Offered in alternate years.
+4953Y. Offered in alternate years. <
 
 trentu.ca/ies
 Program Coordinators
@@ -18930,7 +18930,7 @@ Resource Science/Studies)
 Communities (see Indigenous Studies)
 <COURSE> IESS-INDG-ERST/ERSC-NURS 4740Y: Critical
 Investigations in Indigenous Peoples’ Health and
-the Environments (see Indigenous Studies)
+the Environments (see Indigenous Studies) <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -19996,7 +19996,7 @@ to resolving issues. INDG-ERSC/ERST 3730Y is highly
 recommended. Prerequisite: 5.0 university credits
 including INDG 1001H (or 1000Y), or both ERSC
 1010H and 1020H (or 1000Y), or permission of
-instructor.
+instructor. <
 
 Normally students choose a program of study determined
 by the academic regulations leading to a major or jointmajor in Arts or Science. In exceptional circumstances,
@@ -20696,7 +20696,7 @@ course draws on scholarship from global public health,
 political economy, biopolitics, and human rights.
 Prerequisite: 14.0 university credits including 1.0 IDST
 or ANTH or SOCI credit at the 2000 level or permission
-of instructor.
+of instructor. <
 
 ■■International Political Economy
 
@@ -20951,7 +20951,7 @@ are based at Loyalist College, and this project must
 in whole or in part meet the Loyalist requirement for
 enterprise journalism. Prerequisite: Open only to jointmajor Journalism students in their final year of study.
 <COURSE> WRIT 1001H: Write in Time (see General University
-Courses)
+Courses)<
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -21757,7 +21757,7 @@ Mathematics
 <COURSE> MATH 4620H: Introduction to Combinatorics (Sc)
 An introduction to combinatorics. The topics include
 counting techniques, generating functions, and block
-design. Prerequisite: MATH 2200H.
+design. Prerequisite: MATH 2200H. <
 
 ■■Media Studies
 
@@ -22989,7 +22989,7 @@ of mental health/illness within the current Canadian
 context and selected other countries. Prerequisite: A
 pass in NURS 3020H and 3021H; 60% or higher in
 NURS 3000H, 3001H, 3004H, 3031H (or 3030H), and
-NURS-BIOL 3550H; and permission of department.
+NURS-BIOL 3550H; and permission of department. <
 
 ■■Philosophy
 
@@ -23520,7 +23520,7 @@ A focused study of texts and ideas from philosophers
 in Greek and Roman antiquity. Specific topics are
 determined each year. Prerequisite: 7.0 university
 credits including both PHIL-AHCL 2420H and 2430H or
-2400Y, or permission of department chair.
+2400Y, or permission of department chair. <
 
 ■■Physics
 
@@ -23901,7 +23901,7 @@ Physics
 Crystallography, crystal binding, lattice vibrations and
 thermal properties of solids, band theory, electron
 transport, semiconductors, magnetism. Prerequisite:
-PHYS 2700H and 2620H. Pre- or co-requisite: PHYSCOIS 3200Y (3210) and PHYS-MATH 3150H.
+PHYS 2700H and 2620H. Pre- or co-requisite: PHYSCOIS 3200Y (3210) and PHYS-MATH 3150H. <
 
 ■■Political Studies
 
@@ -24720,7 +24720,7 @@ TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 Political Studies
 
 <COURSE> POST-CAST 4440Y/4441H: Space, Power, and
-Citizenship (see Canadian Studies)
+Citizenship (see Canadian Studies) <
 
 ■■Psychology
 
@@ -25667,7 +25667,7 @@ molecular/cellular perspective to a functional anatomy
 perspective. Prerequisite: Minimum 65% average in
 completed PSYC courses; PSYC 3015Y; PSYC 2200H,
 PSYC-BIOL 3210H, or PSYC 2600H; and at least 1.0
-additional 3000-level PSYC credit.
+additional 3000-level PSYC credit. <
 
 ■■Social Work
 
@@ -26120,7 +26120,7 @@ Investigates a range of perspectives on aging
 including life span theory, feminist approaches, critical
 race perspectives, and Indigenous knowledge(s).
 Prerequisite: Admission to the BSW professional years
-or permission of the director.
+or permission of the director. <
 
 ■■Sociology
 
@@ -26782,7 +26782,7 @@ include definitions and theories of youth, embodiment
 and subcultures. Prerequisite: 10.0 university credits
 including SOCI 2110H or 2100Y and 2150Y and 2.0
 credits at the 3000 level or permission of instructor.
-Offered only at Trent University Durham.
+Offered only at Trent University Durham.<
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -27197,7 +27197,7 @@ to SAFS majors or joint-majors with a minimum
 cumulative average of 75% in 2.0 SAFS credits. Written
 permission must be obtained from the appropriate
 instructor and the SAFS program coordinator before
-registration.
+registration. <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -27212,7 +27212,7 @@ Each placement is supervised jointly by a faculty
 member and a representative of a community
 organization. Prerequisite: 9.0 university credits and a
 minimum cumulative average of 75%. For details see
-Community-Based Research Program (p. 268).
+Community-Based Research Program (p. 268). <
 
 ■■Water Sciences
 
@@ -27321,6 +27321,7 @@ in the field, including the art of effective presentations,
 technical writing, and environmental laws related to
 water. Only open to students enrolled in the Water
 Sciences program. Prerequisite: 10.0 university credits.
+<
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
@@ -28889,7 +28890,7 @@ special needs, involving one half-day per week tutoring
 in a primary, junior, or intermediate classroom and
 coursework focused on literacy development. (Students
 must have the same half-day available to tutor in both
-the Fall and Winter terms.)
+the Fall and Winter terms.) <
 
 TRENT UNIVERSITY  2017–2018 Undergraduate Calendar | August 2017
 
