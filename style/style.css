@@ -1,0 +1,24 @@
+form { 
+	border-radius: 0.5em;
+	padding: 1em;
+	width: 30em;
+	display: inline-block;
+	text-align: left;
+}
+
+.starter-template {
+	text-align: center;
+	margin: 1em;
+}
+
+#uploadProcess {
+	visibility:hidden;
+	text-align:center;
+}
+
+.col-centered{
+	text-align: center;
+	background: #fff;
+    margin: auto;
+    width: 30em;
+}
