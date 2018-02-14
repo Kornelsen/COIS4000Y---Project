@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body { 
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	background-image: url("../img/geometry2.png");
@@ -7,6 +8,19 @@ body {
 	background-color: #3699ef;
 	margin-left: 1em;
 	align-self: center;
+=======
+form { 
+	border-radius: 0.5em;
+	padding: 1em;
+	width: 30em;
+	display: inline-block;
+	text-align: left;
+}
+
+.starter-template {
+	text-align: center;
+	margin: 1em;
+>>>>>>> fd2f4585c565a1869f1bb7e4b36a522a4d6064cd
 }
 
 #uploadProcess {
@@ -14,6 +28,7 @@ body {
 	text-align:center;
 }
 
+<<<<<<< HEAD
 .upload-box {
 	margin: auto;
 	margin-top: 1em;
@@ -31,3 +46,11 @@ body {
  	text-align: center;
 }
 
+=======
+.col-centered{
+	text-align: center;
+	background: #fff;
+    margin: auto;
+    width: 30em;
+}
+>>>>>>> fd2f4585c565a1869f1bb7e4b36a522a4d6064cd

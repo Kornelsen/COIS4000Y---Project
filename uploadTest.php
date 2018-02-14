@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <g!DOCTYPE html>
+=======
+<!DOCTYPE html>
+>>>>>>> fd2f4585c565a1869f1bb7e4b36a522a4d6064cd
 <html>
 <head>
     <title> Transcript Uplaod </title>
@@ -42,6 +46,7 @@
 </script>
 <body>
 
+<<<<<<< HEAD
  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -71,14 +76,30 @@
     </label>
     <br> <br>
     <input class="btn btn-primary" type="submit" value="Upload PDF" name="submit" id="submitbtn">
+=======
+<div class="starter-template">
+    <img src="img/4000logo.png" width="72" height="72" alt="logo">
+    <h1>Transcript Upload Test</h1>
+    <form action="upload.php" method="post" enctype="multipart/form-data" class="bg-light" target="uploadTarget" onsubmit="startUpload();">
+    Select pdf to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload"> <br> <br>
+    <input type="submit" value="Upload PDF" name="submit">
+>>>>>>> fd2f4585c565a1869f1bb7e4b36a522a4d6064cd
     </form>
     <iframe id="uploadTarget" name="uploadTarget" src="#" style="width:0;height:0;border:0px solid #fff;">
     </iframe>
 </div>
 
+<<<<<<< HEAD
 <div class="container progress-box">
     <p id="uploadProcess"><img id="loading" src="img/loader.gif" alt="loading animation" /></p>
      <p id="result"> </p>
+=======
+
+<div class="col-centered">
+    <p id="uploadProcess"><img id="loading" src="img/loader.gif" alt="loading animation" /></p>
+    <p id="result"> </p>
+>>>>>>> fd2f4585c565a1869f1bb7e4b36a522a4d6064cd
 </div>
 
 
