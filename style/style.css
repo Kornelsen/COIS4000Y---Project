@@ -1,14 +1,12 @@
-form { 
-	border-radius: 0.5em;
-	padding: 1em;
-	width: 30em;
-	display: inline-block;
-	text-align: left;
-}
+body { 
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	background-image: url("../img/geometry2.png");
+ }
 
-.starter-template {
-	text-align: center;
-	margin: 1em;
+#submitbtn {
+	background-color: #3699ef;
+	margin-left: 1em;
+	align-self: center;
 }
 
 #uploadProcess {
@@ -16,9 +14,20 @@ form {
 	text-align:center;
 }
 
-.col-centered{
-	text-align: center;
-	background: #fff;
-    margin: auto;
-    width: 30em;
+.upload-box {
+	margin: auto;
+	margin-top: 1em;
+	width: 25em;
+	outline-style: dashed;
+ 	outline-color: #3699ef;
+ 	padding: 1em;
 }
+
+.progress-box {
+	margin: auto;
+	margin-top: 1em;
+ 	padding: 1em;
+ 	width: 30em;
+ 	text-align: center;
+}
+

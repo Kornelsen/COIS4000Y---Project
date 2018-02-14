@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<g!DOCTYPE html>
 <html>
 <head>
     <title> Transcript Uplaod </title>
@@ -42,22 +42,43 @@
 </script>
 <body>
 
-<div class="starter-template">
-    <img src="img/4000logo.png" width="72" height="72" alt="logo">
-    <h1>Transcript Upload Test</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data" class="bg-light" target="uploadTarget" onsubmit="startUpload();">
-    Select pdf to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload"> <br> <br>
-    <input type="submit" value="Upload PDF" name="submit">
+ <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><img src="img/logosmall.png">Degree</a> 
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="conatiner upload-box bg-light">
+    <form action="upload.php" method="post" enctype="multipart/form-data" target="uploadTarget" onsubmit="startUpload();">
+    Select pdf to upload: <br>
+    <label class="btn btn-default btn-file">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    </label>
+    <br> <br>
+    <input class="btn btn-primary" type="submit" value="Upload PDF" name="submit" id="submitbtn">
     </form>
     <iframe id="uploadTarget" name="uploadTarget" src="#" style="width:0;height:0;border:0px solid #fff;">
     </iframe>
 </div>
 
-
-<div class="col-centered">
+<div class="container progress-box">
     <p id="uploadProcess"><img id="loading" src="img/loader.gif" alt="loading animation" /></p>
-    <p id="result"> </p>
+     <p id="result"> </p>
 </div>
 
 
