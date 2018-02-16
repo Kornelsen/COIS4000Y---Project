@@ -5,6 +5,7 @@
 use strict;
 use warnings;
 use CAM::PDF;
+use Switch;
 
 my $filename = "uploads/";
 
@@ -23,10 +24,15 @@ my $transcript = convert_pdf_to_text($filename);
 my $replace1 = qr/\&/p;
 my $replace2 = qr/20\d{2}(-20\d{2})*\s(Academic\sYear|Summer\sSession)/p;
 my $replace3 = qr/\b[ABCDF]{1}(\s|\+|\-)/p;
+my $replace4 = qr/(?s).*?(?=\n\n\n)/mp;
+my $replace5 = qr/(Credits)(\s|\w)+$/mp;
 
 $transcript =~ s/$replace1/and/g;
 $transcript =~ s/$replace2//ig;
 $transcript =~ s/$replace3/\n/ig;
+$transcript =~ s/$replace4//ig;
+$transcript =~ s/$replace5//ig;
+
 
 my $regex = qr/[A-Z]{1}(\w|\s)+\d{4}(Y|H){1}:{1}(\w|\s)+\d.\d\s+(\d{2}|INP)/p;
 
@@ -88,6 +94,7 @@ sub course_info {
 		if ( $ccode =~ /$regex2/g ) {
 			$cnum = ${^MATCH};
   			$ccode =~ s/$replace2//ig;
+  			$ccode = course_abbrev($ccode);
   			$jarray .= "\"DEPT\": \"$ccode\",\n";
   			$jarray .= "\"CODE\": \"$cnum\",\n";
 		}
@@ -103,4 +110,23 @@ sub course_info {
 	elsif ($course =~ /$regex5/g ){
 		$jarray .= "\"GRADE\": \"${^MATCH}\"\n";
 	}
+}
+
+sub course_abbrev{
+	my ($course) = @_;
+
+	my $abbrev = "INV";
+
+	switch ($course) {
+		case "Anthropology" { $abbrev = "ANTH" }
+		case "Biology" { $abbrev = "BIOL" }
+		case "Computing and Info Systems" { $abbrev = "COIS" }
+		case "Cultural Studies" { $abbrev = "CUST" }
+		case "English" { $abbrev = "ENGL" }
+		case "Forensic Science" { $abbrev = "FRSC" }
+		case "German" { $abbrev = "GERM" }
+		case "Mathematics" { $abbrev = "MATH" }
+		else { $abbrev = "INV" }
+	}
+	return $abbrev;
 }
