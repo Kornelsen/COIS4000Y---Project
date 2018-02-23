@@ -1,10 +1,4 @@
-#!usr/bin/perl
-
-#Capture course text [»]\s(.*)[»]
-#Capture Prequisites: \bPrerequisite\b(.*)[./s]
-#Capture Course code: [A-Z]{4}\s[0-9]{4}
-#Capture within PreReq: qr/([A-Z]{4}\s[0-9]{4}(H|Y){1}\s(and)\s[0-9]{4}(H|Y){1}|[A-Z]{4}\s[0-9]{4}(H|Y){1}\s(or)\s[0-9]{4}(H|Y){1})/sp;
-#Capture # of credits within prereq: qr/[0-9]{1,2}[\.](.*)(credits){1}/p;
+ #!usr/bin/perl
 
 use warnings; use strict;
 use Getopt::Long;
@@ -19,10 +13,8 @@ my @courses = ($file_content =~ /COURSE>\s+(.+?)</sg);
 
 my $regex = qr/[A-Z]{4}\s[0-9]{4}(H|Y){1}/p;
 my $regex2 = qr/\bPrerequisite\b(.*)[.]/sp;
-#my $regex3 = qr/([A-Z]{4}\s[0-9]{4}(H|Y){1}\s(and)\s[0-9]{4}(H|Y){1}|[A-Z]{4}\s[0-9]{4}(H|Y){1}\s(or)\s[0-9]{4}(H|Y){1})/sp;
-#my $regex3 = qr/.+?(?=\sor)/p;
-#my $regex4= qr/\sor\s.*/p;
 my $regex3 = qr/[A-Z]{4}\s[0-9]{4}[HY]{1}(.*)[0-9]{4}[HY]{1}/p;
+my $regex3b = qr/\w{4}\s\d{4}(Y|H)/p;
 my $regex6 = qr/[0-9]{2}(%)\s(average)/p; #Average for course
 my $regex7 = qr/[0-9]{1,2}[\.]{1}[0-9]{1}\s(additional)\s(credits)\s(at)\s(the)\s[0-9]{4}/p; #Additional Credits at xxxx Level
 my $regex8 = qr/[A-Z]{4}(.*)[0-9]{4}[YH]/p; #Trim down Prequisite section
@@ -42,11 +34,10 @@ for (my $i = 0; $i < @courses; $i++) {
     if ( $courses[$i] =~ /$regex/ ) {
   		print $fh "<COURSE>";
 
-  		print $fh "<CCODE> ${^MATCH} </CCODE>";
+  		print $fh "<CODE> ${^MATCH} </CODE>";
   		my $ccode = ${^MATCH};
   		
   	if ( $courses[$i] =~ /$regex2/ ) {
-  		print $fh "<PREREQUISITE>";
   		my $RegPre = qr/(Excludes)(.*)(\.)/p;
   		my $PreReq = "${^MATCH}";
   		$PreReq =~ s/\&/and/ig;
@@ -54,35 +45,24 @@ for (my $i = 0; $i < @courses; $i++) {
   		$PreReq =~ s/or permission of//ig;
   		$PreReq =~ s/instructor//ig;
   		$PreReq =~ s/$RegPre//ig;
-  		#print $fh "<PREREQUISITE> $PreReq </PREREQUISITE>";
   		xLevelCourses($PreReq, $fh);
+      print $fh "<PREREQUISITE>";
   		if ($PreReq =~ /$regex8/) {	
 			my $PreReqTrim = "${^MATCH}";
 
-			print $fh "<PRE>$PreReqTrim</PRE>";
-
 			if ($PreReqTrim =~ /$regex3/g) {
-				#print "MATCH: ${^MATCH}\n";
 				code_assoc(${^MATCH}, $fh);
 			}
-
-  			#if ($PreReqTrim =~ /$regex3/g) {
-  			#	print $fh "<REQ> ${^MATCH} </REQ>";
-  			#	code_assoc(${^MATCH}, $fh);
-  				#print "<REQ> ${^MATCH} </REQ>\n";
-
-			#if ($PreReq =~ /$regex4/g) {
-  			#	print $fh "<ALTREQ> ${^MATCH} </ALTREQ>";
-  			#	code_assoc(${^MATCH}, $fh);
-  			#	#print "<ALTREQ> ${^MATCH} </ALTREQ>\n";
-			#	}
-			}
+      elsif ($PreReqTrim =~ /$regex3b/g) {
+        print $fh "<REQUIREMENT>${^MATCH}</REQUIREMENT>"
+      }
+		}
 
 		if ($PreReq =~ /$regex6/g) {
   				print $fh "<AVERAGE> ${^MATCH} </AVERAGE>";
 			}
 		if ($PreReq =~ /$regex7/g) {
-  				print $fh "<ADDITIONAL> ${^MATCH} </ADDITIONAL>";
+  				print $fh "<INCLUDING> ${^MATCH} </INCLUDING>";
 			}
 		print $fh "</PREREQUISITE>";
   		}
@@ -111,16 +91,17 @@ sub code_assoc {
 	$target .= ")";
 
 	my $regex = qr/\sor\s/p;
+  my $regexb = qr/\sand\s/p;
   my $regex2 = qr/[A-Z]{4}/p;
   my $regex3 = qr/[0-9]{4}[YH]{1}/p;
 
 	if ( $target =~ /$regex/g ) {
 
-  		my $start = $-[0];
-  		my $end = $+[0];
+  		my $orStart = $-[0];
+  		my $orEnd = $+[0];
 
-  		substr($target,$start,0," ) ");
-  		substr($target,$end,0," ( ");
+  		substr($target,$orStart,0," ) ");
+  		substr($target,$orEnd,0," ( ");
 	}
 
 	print "NEW: $target\n";
@@ -137,7 +118,6 @@ sub code_assoc {
   my $curlyBrace = 0;
 
   for (split ' ', $target) {
-        #printf("word%d = %s\n", ++$count, $_);
 
         my $word = $_;
 
@@ -149,7 +129,7 @@ sub code_assoc {
           $currentCode = ${^MATCH};
         }
         if ($_ =~ /$regex3/g ) {
-          print $fh "CODE: $currentCode ${^MATCH}\n";
+          print $fh "$currentCode ${^MATCH}\n";
           if ($curlyBrace == 1) {
             print $fh "</ALTCODE>\n";
             $curlyBrace = 0;
@@ -199,21 +179,15 @@ sub xLevelCourses {
 		print $fh "<ADDITIONAL>";
 		my $including = ${^MATCH};
 
-		print $fh "<TYPE>";
-
   		my @typeunf = ( $including =~ /$regex4/g);
   		my @type = uniq(@typeunf);
 
   		for (my $i = 0; $i < @type; $i++) {
-  			print $fh "<CODE> $type[$i] </CODE>";
+  			print $fh "<TYPE> $type[$i] </TYPE>";
   		}
 
-  		print $fh "</TYPE>";
-
-  		print $fh "<TARGET> $including </TARGET>";
-
   		if ($including =~ /$regex5/g) {
-  			print $fh "<TOTAL> ${^MATCH} </TOTAL>";
+  			print $fh "<SUBTOTAL> ${^MATCH} </SUBTOTAL>";
   		}
 
   		if ($including =~ /$regex3/g) {
