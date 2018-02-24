@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
     	echo "Sorry, your file was not uploaded.\n";
 	} else {
     	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        	exec("/usr/bin/perl /Applications/mampstack-5.6.33-0/apache2/htdocs/TranscriptScan.pl $newfilename",$output);
+        	exec("/usr/bin/perl /var/www/html/TranscriptScan.pl $newfilename",$output);
         	foreach ($output as $value) {
                 $jobject = $jobject . $value;
         	}
@@ -41,7 +41,12 @@ sleep(1);
 ?>
 
 <script language="javascript" type="text/javascript">
-    var c = <?php echo $jobject ?>;
-    var d = JSON.stringify(c);
-    document.cookie = 'courses='+d+';';
-    window.top.window.stopUpload(<?php echo $result; ?>);</script>  
+    var result = "<?php echo $up_status; ?>";
+
+    if (result == "success") {
+        var c = <?php echo $jobject ?>;
+        var d = JSON.stringify(c);
+        localStorage.setItem("courses",d);
+    }
+    window.top.window.stopUpload(<?php echo $result; ?>);
+    </script>  
