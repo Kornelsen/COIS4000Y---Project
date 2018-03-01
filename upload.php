@@ -41,12 +41,12 @@ sleep(1);
 ?>
 
 <script language="javascript" type="text/javascript">
-    var result = "<?php echo $up_status; ?>";
+    var result = "<?php echo $result; ?>";
 
-    if (result == "success") {
+    if (result == 1) {
         var c = <?php echo $jobject ?>;
         var d = JSON.stringify(c);
         localStorage.setItem("courses",d);
     }
     window.top.window.stopUpload(<?php echo $result; ?>);
-    </script>  
+</script>  
