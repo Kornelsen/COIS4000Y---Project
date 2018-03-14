@@ -1,3 +1,5 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 body { 
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	background-image: url("../img/geometry2.png");
@@ -7,6 +9,11 @@ body {
 	background-color: #3699ef;
 	margin-left: 1em;
 	align-self: center;
+}
+
+.centered {
+	margin: auto;
+	text-align: center;
 }
 
 #uploadProcess {
@@ -23,11 +30,60 @@ body {
  	padding: 1em;
 }
 
-.progress-box {
+.report-box {
+	visibility: hidden;
 	margin: auto;
+	margin-top: 1em;
+	width: 65%;
+	outline-style: dashed;
+ 	outline-color: #3699ef;
+ 	padding-top: 1em;
+}
+
+#report-content {
+	margin:auto;
+	width: 90%;
+}
+
+.progress-box {
+	margin: 0 auto;
 	margin-top: 1em;
  	padding: 1em;
  	width: 30em;
  	text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+.complete li {
+	color: #3699ef;
+}
+
+.incomplete li {
+	color: #ef4c36;
+}
+
+.complete li:before {    
+    font-family: 'FontAwesome';
+    content: '\f058';
+    margin:0 5px 0 -15px;
+}
+
+.incomplete li:before {    
+    font-family: 'FontAwesome';
+    content: '\f057';
+    margin:0 5px 0 -15px;
+}
+
+.heading {
+	background: #3699ef;
+	border-radius: 0.5em;
+	color: #FFF;
+}
+
+h5 {
+	padding: 0.5em;
 }
 

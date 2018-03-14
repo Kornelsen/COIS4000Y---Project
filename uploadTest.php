@@ -1,8 +1,9 @@
-<g!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title> Transcript Uplaod </title>
     <link rel="shortcut icon" type="image/x-icon" href="img/4000logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style/style.css">
@@ -24,6 +25,7 @@
         if (success == 1){
             document.getElementById('result').innerHTML = '<span class="msg">Transcript upload successful<\/span>';
             document.getElementById("loading").src="img/success.png";
+            window.location="/ReportTest.html";
         }
         else {
            document.getElementById('result').innerHTML = '<span class="errmsg">Error during transcript uplaod<\/span>';
@@ -34,11 +36,6 @@
         return true;
     }
 
-    function getCookie(name){
-        var re = new RegExp(name + "=([^;]+)");
-        var value = re.exec(document.cookie);
-        return (value != null) ? unescape(value[1]) : null;
-    }
 </script>
 <body>
 
@@ -46,7 +43,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#"><img src="img/logosmall.png">Degree</a> 
+  <a class="navbar-brand" href="#"><img src="img/logosmall.png"></a> 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
