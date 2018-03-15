@@ -87,3 +87,8 @@ h5 {
 	padding: 0.5em;
 }
 
+.errmsg {
+	margin: auto;
+	color: #ef4c36;
+}
+
