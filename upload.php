@@ -28,6 +28,7 @@ if (isset($_POST["submit"])) {
                 foreach ($output as $value) {
                     $jobject = $jobject . $value;
                 }
+                unlink($target_file);
             } 
         }
     }

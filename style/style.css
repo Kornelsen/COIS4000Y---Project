@@ -6,9 +6,12 @@ body {
  }
 
 #submitbtn {
-	background-color: #3699ef;
 	margin-left: 1em;
 	align-self: center;
+}
+
+.btn-primary {
+	background-color: #3699ef;
 }
 
 .centered {
@@ -26,7 +29,7 @@ body {
 	margin-top: 1em;
 	width: 25em;
 	outline-style: dashed;
- 	outline-color: #3699ef;
+ 	outline-color: #afafaf;
  	padding: 1em;
 }
 
@@ -36,7 +39,7 @@ body {
 	margin-top: 1em;
 	width: 65%;
 	outline-style: dashed;
- 	outline-color: #3699ef;
+ 	outline-color: #afafaf;
  	padding-top: 1em;
 }
 
@@ -46,10 +49,10 @@ body {
 }
 
 .progress-box {
-	margin: 0 auto;
+	margin: auto;
 	margin-top: 1em;
  	padding: 1em;
- 	width: 30em;
+ 	width: 25em;
  	text-align: center;
 }
 
