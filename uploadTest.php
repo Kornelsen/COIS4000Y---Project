@@ -27,7 +27,7 @@
             window.location="/ReportTest.html";
           }
           else {
-           document.getElementById('result').innerHTML = '<span class="errmsg">Error during transcript uplaod<\/span>';
+           document.getElementById('result').innerHTML = '<span class="errmsg">Error during transcript upload<\/span>';
            document.getElementById('error-msg').innerHTML = '<span class="errmsg">'+error+'<\/span>';
            console.log(error);
          }

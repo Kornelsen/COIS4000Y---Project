@@ -8,7 +8,7 @@ function getJSON() {
       window.location="http://159.89.116.235/uploadTest.php";
     }
 
-    var degree = '{"degree": "Honours BSc.Computing Systems","required": ["COIS 1010H","COIS 1020H", "COIS 2020H", "COIS 2240H","COIS 2300H","COIS 3020H","COIS 3380H","COIS 3400H","MATH 1350H","MATH 1550H"],"options": [{"choice": ["MATH 1005H","MATH 1100H","MATH 1100Y","MATH 1101Y"]}],"req_credits": [{"num": 2,"type": "COIS","level": 4},{"num": 2.5,"type": "COIS","level": 3},{"num": 2,"type": "COIS","level": 0}],"science_credits": 14}';
+    var degree = '{"degree": "Honours BSc.Computing Systems","required": ["COIS 1010H","COIS 1020H", "COIS 2020H", "COIS 2240H","COIS 2300H","COIS 3020H","COIS 3380H","COIS 3400H","MATH 1350H","MATH 1550H"],"options": [{"id": 1, "choice": ["MATH 1005H","MATH 1100H","MATH 1100Y","MATH 1101Y"]}],"req_credits": [{"num": 2,"type": "COIS","level": 4},{"num": 2.5,"type": "COIS","level": 3},{"num": 2,"type": "COIS","level": 0}],"science_credits": 14}';
 
     var transcript = localStorage.getItem("courses");
 
@@ -19,10 +19,10 @@ function getJSON() {
     var scCreditsObj = JSON.parse(sc_credits);
     document.getElementById('degreeName').innerHTML = degreeObj.degree;
 
-    var required_credits = [];
+    var required_courses = [];
 
     degreeObj.required.forEach( function (element) {
-      required_credits.push(element);
+      required_courses.push(element);
     });
 
     var average = 0;
@@ -32,25 +32,19 @@ function getJSON() {
     var required_sc = degreeObj.science_credits;
     var fifties = 0;
     var year_one_creds = 0;
-    var year_two_creds = 0;
-    var year_three_creds = 0;
-    var year_four_creds = 0;
+
+    var course_choices = new Array();
+
+    degreeObj.options.forEach( function (element) {
+
+          course_choices[element.id] = element.choice;
+
+        });
 
     transcriptObj.Credits.forEach( function (element) {
 
-      switch(element.CODE.charAt(0)) {
-        case '1':
-          year_one_creds += parseFloat(element.CREDS);
-          break;
-        case '2':
-          year_two_creds += parseFloat(element.CREDS);
-          break;
-        case '3':
-          year_three_creds += parseFloat(element.CREDS);
-          break;
-        case '4':
-          year_four_creds += parseFloat(element.CREDS);
-          break;
+      if (element.CODE.charAt(0) == '1') {
+        year_one_creds += parseFloat(element.CREDS);
       }
 
       course = element.DEPT + " " + element.CODE;
@@ -59,7 +53,7 @@ function getJSON() {
               sc_courses++;
             }
 
-      if (required_credits.includes(course)) {
+      if (required_courses.includes(course)) {
 
           if (element.GRADE != "INP") {
             average += element.GRADE;
@@ -72,15 +66,28 @@ function getJSON() {
 
             addToList(course,"complete");
 
-            var index = required_credits.indexOf(course);
-            required_credits.splice(index, 1);
+            var index = required_courses.indexOf(course);
+            required_courses.splice(index, 1);
 
         }
+
+        var choice_num = 1;
+
+        course_choices.forEach( function (element) {
+
+          if (element.indexOf(course) > -1) {
+            addToList(course,"complete");
+            delete course_choices[choice_num];
+          }
+          choice_num++;
+        });
     });
 
-    required_credits.forEach( function (element) {
+    required_courses.forEach( function (element) {
           addToList(element,"incomplete");
       });
+
+    reqCredits(degreeObj.req_credits, transcriptObj.Credits);
 
     if (required_sc < sc_courses) {
       addToList(required_sc + " Sc. Credits","unireq-complete");
@@ -120,4 +127,44 @@ function addToList(course, list) {
   var textnode = document.createTextNode(course);         
   node.appendChild(textnode);                              
   document.getElementById(list).appendChild(node);
+}
+
+function reqCredits(req_credits, complete_credits) {
+
+  var cred_list = new Array();
+  var cred_list_details = new Array();
+
+  req_credits.forEach( function (element) {
+
+    if (element.level != 0) {
+      cred_list[element.type + String(element.level)] = element.num;
+      cred_list_details[element.type + String(element.level)] = String(element.num) + " " + element.type + " " + element.level + "000 Credits";
+    }
+    else {
+      cred_list[element.type] = element.num;
+      cred_list_details[element.type] = String(element.num) + " " + element.type + " Credits";
+    }
+  });
+
+  complete_credits.forEach( function (element) {
+
+    var code = element.DEPT + String(element.CODE.charAt(0)); 
+
+    if (code in cred_list) {
+      cred_list[code] -= parseFloat(element.CREDS);
+      if (cred_list[code] <= 0) {
+        console.log("Requirement met for " +code);
+        addToList(cred_list_details[code], "complete");
+        delete cred_list[code];
+      }
+    }
+    else if(element.DEPT in cred_list) {
+      cred_list[element.DEPT] -= parseFloat(element.CREDS);
+      if (cred_list[element.DEPT] <= 0) {
+        console.log("Requirement met for " +element.DEPT);
+        addToList(cred_list_details[element.DEPT], "complete");
+        delete cred_list[element.DEPT];
+      }
+    }
+  });
 }
