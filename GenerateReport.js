@@ -8,7 +8,8 @@ function getJSON() {
       window.location="http://159.89.116.235/uploadTest.php";
     }
 
-    var degree = '{"degree": "Honours BSc.Computing Systems","required": ["COIS 1010H","COIS 1020H", "COIS 2020H", "COIS 2240H","COIS 2300H","COIS 3020H","COIS 3380H","COIS 3400H","MATH 1350H","MATH 1550H"],"options": [{"id": 1, "choice": ["MATH 1005H","MATH 1100H","MATH 1100Y","MATH 1101Y"]}],"req_credits": [{"num": 2,"type": "COIS","level": 4},{"num": 2.5,"type": "COIS","level": 3},{"num": 2,"type": "COIS","level": 0}],"science_credits": 14}';
+    //var degree = '{"degree": "Honours BSc.Computing Systems","required": ["COIS 1010H","COIS 1020H", "COIS 2020H", "COIS 2240H","COIS 2300H","COIS 3020H","COIS 3380H","COIS 3400H","MATH 1350H","MATH 1550H"],"options": [{"id": 1, "choice": ["MATH 1005H","MATH 1100H","MATH 1100Y","MATH 1101Y"], "total":0.5}],"req_credits": [{"num": 2,"type": "COIS","level": 4},{"num": 2.5,"type": "COIS","level": 3},{"num": 2,"type": "COIS","level": 0}],"science_credits": 14}';
+    var degree = '{"degree": "Honours Mathematics", "required": ["MATH 1100H", "MATH 1350H", "MATH 1550H", "MATH 2110H", "MATH 2120H", "MATH 2200H", "MATH 2350H", "MATH 2560", "MATH 4800"], "options": [{"choice": ["MATH 1120H", "MATH 1100Y", "MATH 1101Y"], "total": "0.5"}, {"choice": ["MATH 2150H", "MATH 2260H", "MATH 2600H", "MATH 3180H", "MATH 2180H", "COIS 1020H"], "total": "0.5"}, {"choice": ["MATH 3150H", "MATH 3160H", "MATH 3310H", "MATH 3350H", "MATH 3510H", "MATH 3560H", "MATH 3610H", "MATH 3770H", "MATH 3790H"], "total": "1.0"} ], "req_credits": [{"num": 1, "type": "MATH", "level": 2 }, {"num": 2, "type": "MATH", "level": "3"}, {"num": 1.5, "type": "MATH", "level": 4 } ], "science_credits": 14 }';
 
     var transcript = localStorage.getItem("courses");
 
@@ -18,6 +19,12 @@ function getJSON() {
     var transcriptObj = JSON.parse(transcript);
     var scCreditsObj = JSON.parse(sc_credits);
     document.getElementById('degreeName').innerHTML = degreeObj.degree;
+
+    var optionsCount = [];
+
+     for (var i = 0; i < degreeObj.options.length; i++) {
+      optionsCount.push(degreeObj.options[i].total);
+     }
 
     var required_courses = [];
 
@@ -73,15 +80,66 @@ function getJSON() {
 
         var choice_num = 1;
 
-        course_choices.forEach( function (element) {
+      for (var i = 0; i < degreeObj.options.length; i++) {
+        var object = degreeObj.options[i];
 
-          if (element.indexOf(course) > -1) {
-            addToList(course,"complete");
-            delete course_choices[choice_num];
-          }
-          choice_num++;
+        object.choice.forEach(function (element) {
+            if (course == element) {
+              if (course.slice(-1) == "Y") {
+                optionsCount[i] -= 1;
+              }
+              else if (course.slice(-1) == "H") {
+                optionsCount[i] -= 0.5;
+                console.log(optionsCount[i]);
+              }
+            }
         });
+      }
     });
+
+    for (var i = 0; i < degreeObj.options.length; i++) {
+        var htmlModal = "";
+
+        htmlModal += '<div class="modal fade" id="Requirement'+ (i+1) +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
+        htmlModal += '<div class="modal-dialog modal-dialog-centered" role="document">';
+        htmlModal += '<div class="modal-content">';
+        htmlModal += '<div class="modal-body">';
+        htmlModal += 'PLACEHOLDERTEXT';
+        htmlModal += '</div> </div> </div> </div>'
+
+
+        var stringBuild = ""; 
+        if (optionsCount[i] <= 0) {
+          stringBuild += degreeObj.options[i].total + " credit(s) from: ";
+
+          for (var j = 0; j < degreeObj.options[i].choice.length; j++) {
+            if (j+1 == degreeObj.options[i].choice.length) {
+              stringBuild += "or " + degreeObj.options[i].choice[j];
+            }
+            else {
+              stringBuild += degreeObj.options[i].choice[j] + ", ";
+            }
+          }
+
+          htmlModal = htmlModal.replace("PLACEHOLDERTEXT", stringBuild);
+          addModal("<a href='#Requirement"+ (i+1) +"' data-toggle='modal' data-target='#Requirement"+ (i+1) +"'>Requirement " + (i+1) + "<sup>+</sup></a>", "complete", htmlModal);
+        }
+        else {
+          stringBuild += degreeObj.options[i].total + " credit(s) from: ";
+
+          for (var j = 0; j < degreeObj.options[i].choice.length; j++) {
+            if (j+1 == degreeObj.options[i].choice.length) {
+              stringBuild += "or " + degreeObj.options[i].choice[j];
+            }
+            else {
+              stringBuild += degreeObj.options[i].choice[j] + ", ";
+            }
+          }
+          htmlModal = htmlModal.replace("PLACEHOLDERTEXT", stringBuild, htmlModal);
+          addModal("<a href='#Requirement"+ (i+1) +"' data-toggle='modal' data-target='#Requirement"+ (i+1) +"'>Requirement " + (i+1) + "<sup>+</sup></a>", "incomplete", htmlModal);
+        }
+        console.log(stringBuild);
+      }
 
     required_courses.forEach( function (element) {
           addToList(element,"incomplete");
@@ -123,9 +181,16 @@ function getJSON() {
 function addToList(course, list) {
   var node = document.createElement("li"); 
   node.id = course;        
-  node.classList.add("col-md-4");      
-  var textnode = document.createTextNode(course);         
-  node.appendChild(textnode);                              
+  node.classList.add("col-md-4");  
+  node.innerHTML = course;                               
+  document.getElementById(list).appendChild(node);
+}
+
+function addModal(course, list, htmlModal) {
+  var node = document.createElement("li"); 
+  node.id = course;        
+  node.classList.add("col-md-4");  
+  node.innerHTML = course + htmlModal;                               
   document.getElementById(list).appendChild(node);
 }
 

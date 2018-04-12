@@ -1,0 +1,67 @@
+{
+  "degree": "Honours Mathematics",
+  "required": [
+    "MATH 1100H",
+    "MATH 1350H",
+    "MATH 1550H",
+    "MATH 2110H",
+    "MATH 2120H",
+    "MATH 2200H",
+    "MATH 2350H",
+    "MATH 2560",
+    "MATH 4800"
+  ],
+  "options": [
+    {
+      "choice": [
+        "MATH 1120H",
+        "MATH 1100Y",
+        "MATH 1101Y"
+      ],
+      "total": "0.5"
+    },
+    {
+      "choice": [
+        "MATH 2150H",
+        "MATH 2260H",
+        "MATH 2600H",
+        "MATH 3180H",
+        "MATH 2180H",
+        "COIS 1020H"
+      ],
+      "total": "0.5"
+    },
+    {
+      "choice": [
+        "MATH 3150H",
+        "MATH 3160H",
+        "MATH 3310H",
+        "MATH 3350H",
+        "MATH 3510H",
+        "MATH 3560H",
+        "MATH 3610H",
+        "MATH 3770H",
+        "MATH 3790H"
+      ],
+      "total": "1.0"
+    }
+  ],
+  "req_credits": [
+    {
+      "num": 1,
+      "type": "MATH",
+      "level": 2
+    },
+    {
+      "num": 2,
+      "type": "MATH",
+      "level": "3"
+    },
+    {
+      "num": 1.5,
+      "type": "MATH",
+      "level": 4
+    }
+  ],
+  "science_credits": 14
+}

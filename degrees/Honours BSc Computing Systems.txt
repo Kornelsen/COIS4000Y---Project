@@ -1,0 +1,44 @@
+{
+  'degree': 'Honours Computing Systems',
+  'required': [
+    'COIS 1010H',
+    'COIS 1020H',
+    'COIS 2020H',
+    'COIS 2240H',
+    'COIS 2300H',
+    'COIS 3020H',
+    'COIS 3380H',
+    'COIS 3400H',
+    'MATH 1350H',
+    'MATH 1550H'
+  ],
+  'options': [
+    {
+      'choice': [
+        'MATH 1005H',
+        'MATH 1100H',
+        'MATH 1100Y',
+        'MATH 1101Y'
+      ],
+	total = 0.5
+    }
+  ],
+  'req_credits': [
+    {
+      'num': 2,
+      'type': 'COIS',
+      'level': 4
+    },
+    {
+      'num': 2.5,
+      'type': 'COIS',
+      'level': 3
+    },
+    {
+      'num': 2,
+      'type': 'COIS',
+      'level': 0
+    }
+  ],
+  'science_credits': 14
+}
