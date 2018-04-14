@@ -1,15 +1,11 @@
-function getJSON() {
+function getJSON(degree) {
 
-    document.getElementById("generate-btn").style.display = "none";
     var rbox = document.getElementsByClassName("report-box");
     rbox[0].style.visibility = "visible";
 
     if (localStorage.getItem("courses") === null) {
       window.location="http://159.89.116.235/uploadTest.php";
     }
-
-    //var degree = '{"degree": "Honours BSc.Computing Systems","required": ["COIS 1010H","COIS 1020H", "COIS 2020H", "COIS 2240H","COIS 2300H","COIS 3020H","COIS 3380H","COIS 3400H","MATH 1350H","MATH 1550H"],"options": [{"id": 1, "choice": ["MATH 1005H","MATH 1100H","MATH 1100Y","MATH 1101Y"], "total":0.5}],"req_credits": [{"num": 2,"type": "COIS","level": 4},{"num": 2.5,"type": "COIS","level": 3},{"num": 2,"type": "COIS","level": 0}],"science_credits": 14}';
-    var degree = '{"degree": "Honours Mathematics", "required": ["MATH 1100H", "MATH 1350H", "MATH 1550H", "MATH 2110H", "MATH 2120H", "MATH 2200H", "MATH 2350H", "MATH 2560", "MATH 4800"], "options": [{"choice": ["MATH 1120H", "MATH 1100Y", "MATH 1101Y"], "total": "0.5"}, {"choice": ["MATH 2150H", "MATH 2260H", "MATH 2600H", "MATH 3180H", "MATH 2180H", "COIS 1020H"], "total": "0.5"}, {"choice": ["MATH 3150H", "MATH 3160H", "MATH 3310H", "MATH 3350H", "MATH 3510H", "MATH 3560H", "MATH 3610H", "MATH 3770H", "MATH 3790H"], "total": "1.0"} ], "req_credits": [{"num": 1, "type": "MATH", "level": 2 }, {"num": 2, "type": "MATH", "level": "3"}, {"num": 1.5, "type": "MATH", "level": 4 } ], "science_credits": 14 }';
 
     var transcript = localStorage.getItem("courses");
 
@@ -232,4 +228,44 @@ function reqCredits(req_credits, complete_credits) {
       }
     }
   });
+}
+
+function loadDegree() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     var degreeList = JSON.parse(this.responseText);
+     var dropdown = document.getElementById('degree-dropdown');
+     degreeList.degrees.forEach( function(element) {
+      dropdown.innerHTML += "<a class='dropdown-item' id='"+element+"' href='#' onClick='getDegreeJSON(this.id);'>"+element+"</a>";
+     });
+    }
+  };
+  xhttp.open("GET", "degrees/degreeList.txt", true);
+  xhttp.send();
+}
+
+function getDegreeJSON(degreeChoice) {
+  degreeChoice += ".txt";
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     clearTables();
+     getJSON(this.responseText);
+    }
+  };
+  xhttp.open("GET", "degrees/"+degreeChoice, true);
+  xhttp.send();
+}
+
+function clearTables() {
+  var complete = document.getElementById("complete");
+  var incomplete = document.getElementById("incomplete");
+  var unireqComplete = document.getElementById("unireq-complete");
+  var unireqIncomplete = document.getElementById("unireq-incomplete");
+  complete.innerHTML = "";
+  incomplete.innerHTML = "";
+  unireqComplete.innerHTML = "";
+  unireqIncomplete.innerHTML = "";
 }

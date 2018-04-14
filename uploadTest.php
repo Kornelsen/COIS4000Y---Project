@@ -59,6 +59,16 @@
         </div>
       </nav>
 
+      <div class="jumbotron">
+        <h1 class="display-3">Welcome!</h1>
+        <p class="lead">From here you can upload your university transcript in order to start tracking your progress to your degree! If you've previously uploaded your transcript, <a id="reportLink" href="/ReportTest.html">click here.</a></p>
+        <hr class="my-4">
+        <p>For more information on how to obtain your unofficial transcript, click the link below.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+
       <div class="conatiner upload-box bg-light">
         <form action="upload.php" method="post" enctype="multipart/form-data" target="uploadTarget" onsubmit="startUpload();">
           Select pdf to upload: <br>

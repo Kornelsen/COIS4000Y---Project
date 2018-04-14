@@ -1,0 +1,6 @@
+{
+  "degrees": [
+    "Honours BSc Computing Systems",
+    "Honours BSc Mathematics"
+  ]
+}
