@@ -1,0 +1,54 @@
+{
+  "degree": "Software Engineering",
+  "required": [
+  	"COIS 3030H",
+    "COIS 3510H",
+    "COIS 3560H",
+    "COIS 4350H",
+    "COIS 4400H",
+    "COIS 4470H",
+    "COIS 4550H"
+  ],
+  "req_credits": [
+    {
+      "num": 1,
+      "type": "ADMN",
+      "level": 0
+    }
+  ],
+  "multi_credits": [
+    {
+      "num": 1,
+      "title" : "1 Credit from AHCL, CAST, CUST, ENGL, FREN, HIST, PHIL, SPAN or WMST",
+      "type": [
+        "AHCL",
+        "CAST",
+        "CUST",
+        "ENGL",
+        "FREN",
+        "HIST",
+        "PHIL",
+        "SPAN",
+        "WMST"
+      ],
+      "level": 0,
+      "sc": 0,
+      "total": 0
+    },
+    {
+      "num": 1,
+      "title" : "1 Sc Credit from BIOL, CHEM, ERSC, FRSC, GEOG or PHYS",
+      "type": [
+        "BIOL",
+        "CHEM",
+        "ERSC",
+        "FRSC",
+        "GEOG",
+        "PHYS"
+      ],
+      "level": 0,
+      "sc": 1,
+      "total": 0
+    }
+  ]
+}

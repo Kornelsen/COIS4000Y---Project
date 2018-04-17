@@ -1,0 +1,5 @@
+{
+  "specs": [
+    "Mathematical Finance"
+  ]
+}

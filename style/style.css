@@ -10,8 +10,10 @@ body {
 	align-self: center;
 }
 
-.btn-primary {
-	background-color: #3699ef;
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: #04522B !important;
+    border: none;
+    box-shadow: none;
 }
 
 .centered {
@@ -61,7 +63,7 @@ ul {
 }
 
 .complete li {
-	color: #3699ef;
+	color: #04522B;
 }
 
 .incomplete li {
@@ -81,7 +83,7 @@ ul {
 }
 
 .heading {
-	background: #3699ef;
+	background: #04522B;
 	border-radius: 0.5em;
 	color: #FFF;
 }
@@ -96,4 +98,15 @@ h5 {
 }
 
 a { color: inherit; } 
+
+.specHead {
+	display: : none;
+	background: #04522B;
+	border-radius: 0.5em;
+	color: #FFF;
+}
+
+.specDrop {
+	display: none !important;
+}
 

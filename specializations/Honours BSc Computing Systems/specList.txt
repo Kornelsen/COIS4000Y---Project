@@ -1,0 +1,7 @@
+{
+  "specs": [
+    "Computer Science",
+    "Software Engineering",
+    "Data Analytics"
+  ]
+}

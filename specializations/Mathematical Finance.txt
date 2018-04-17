@@ -1,0 +1,23 @@
+{
+  "degree": "Mathematical Finance",
+  "required": [
+    "MATH 2150H",
+    "MATH 2560H",
+    "MATH 3150H",
+    "MATH 3160H",
+    "MATH 3180H",
+    "MATH 3350H",
+    "MATH 3510H",
+    "MATH 3560H",
+    "MATH 3570H",
+    "MATH 4510H"
+  ],
+  "req_credits": [
+    {
+      "num": 1,
+      "type": "ADMN",
+      "level": 0
+    }
+  ]
+}
+
